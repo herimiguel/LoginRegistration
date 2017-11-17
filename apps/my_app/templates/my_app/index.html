@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+    <ul>
+            {% for message in messages %}
+                <li>{{ message }}</li>
+            {% endfor %}
+    </ul>
+
+<h1>REGISTRATION</h1>
+<form action="registration_process" method="POST">
+    {% csrf_token %}
+
+<label for="user_name">First Name:</label>
+<input type="text" name="user_name">
+<br>
+<label for="last_name">Last Name:</label>
+<input type="text" name="last_name">
+<br>
+
+<label for="email_name">Email:</label>
+<input type="text" name="email_name">
+<br>
+
+<label for="password">Password:</label>
+<input type="password" name="password">
+<br>
+
+<label for="confirm-password">Confirm PW</label>
+<input type="password" name="confirm-password">
+<br>
+
+<input type="submit"  name="register" value="REGISTER">
+
+</form>
+
+<h1>LOGIN</h1>
+
+<form action="login_process" method="POST">
+    {% csrf_token %}
+
+<label for="email_name">Email:</label>
+<input type="text" name="email_name">
+<br>
+
+<label for="password">Password</label>
+<input type="password"  name="password">
+<br>
+
+<input type="submit"  name="register" value="LOGIN">
+
+
+</form>
+
+
+
+
+</body>
+</html>
